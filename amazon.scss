@@ -1,15 +1,17 @@
 /*variables*/
+/*colors*/
 $amazonBlue: #232f3e;
 $amzonBlueLight: #37475a;
 $amazonBlueDark: #131a22;
 $amazonYellow: #febd69;
-
 $lightgray: #eee;
+$text-color: #444;
+$link-color: #247bbd;
+/*fontrelated*/
 $font-stack: Arial, sans-serif;
 $font-stack-main: 'PT Sans', sans-serif;
 $base-font-size: 13px;
-$text-color: #444;
-$link-color: #247bbd;
+
 
 /*Common*/
 body {
@@ -84,6 +86,20 @@ h2 {
     padding: 8px 5px;
 }
 
+.flex-container {
+	@media screen and (max-width:1024px) {
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	> div[class|="grow"] {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 100%;
+		        flex: 0 0 100%;
+        max-width: initial;
+        min-width: initial;
+	}
+}
+
 .flex-center {
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
@@ -97,7 +113,10 @@ h2 {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-
+	@media screen and (max-width:1024px) {
+		-ms-flex-preferred-size: 50%;
+		    flex-basis: 45%;
+	}
 }
 
 .grow-2 {
@@ -153,6 +172,7 @@ header {
 			width: 50px;
 			background: $lightgray;
 			height: 33px;
+			outline: 0;
 		}
 
 	}
@@ -325,6 +345,17 @@ footer {
 		max-width: 125px;
 		padding-top: 20px;
 		padding-right: 20px;
+	}
+	.footer-menu {
+		a {
+			font-size: $base-font-size;
+			display: inline-block;
+			padding: 10px;
+			color: $lightgray;
+		}
+		span {
+			color: darken($lightgray, 20%);
+		}
 	}
 }
 
