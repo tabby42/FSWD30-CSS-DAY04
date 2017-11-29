@@ -13,6 +13,9 @@ $font-stack-main: 'PT Sans', sans-serif;
 $base-font-size: 13px;
 
 
+
+
+
 /*Common*/
 body {
 	font-family: $font-stack;
@@ -92,11 +95,14 @@ h2 {
 		    flex-wrap: wrap;
 	}
 	> div[class|="grow"] {
-		-webkit-box-flex: 0;
+		@media screen and (max-width:1024px) {
+			-webkit-box-flex: 0;
 		    -ms-flex: 0 0 100%;
 		        flex: 0 0 100%;
-        max-width: initial;
-        min-width: initial;
+	        max-width: initial;
+	        min-width: initial;
+		}
+		
 	}
 }
 
@@ -200,6 +206,7 @@ header {
 
 /*Navigation*/
 #navbar {
+	padding: 0 5px;
 	ul {
 		list-style-type: none;
 		width: 100%;
@@ -219,6 +226,7 @@ header {
 			padding-left: 0;
 			li:last-child {
 				float: right;
+				border-right: 1px solid $lightgray;
 			}
 		}
 		&.nav-right {
@@ -337,7 +345,6 @@ footer {
 			a {
 				display: inline-block;
 				padding: 5px 0;
-
 			}
 		}
 	}
